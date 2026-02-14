@@ -1,0 +1,35 @@
+## Install Dependencies
+
+## Document Processing
+pypdf
+
+## LLM Fine tuning Process
+transformers
+datasets
+peft
+trl
+bitsandbytes
+accelerate
+
+## Data Manupulation
+pandas
+numpy
+
+##Text Embeddings
+sentence-transformers
+
+##Vector DB
+weaviate-client
+
+##LLM Providers
+langchain-openai
+langchain-groq
+langchain-google-genai
+langchain-cohere
+langchain-community
+
+##langchain
+langchain
+
+## LLM Evaluation
+rouge_score

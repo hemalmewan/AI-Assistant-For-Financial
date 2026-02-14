@@ -1,0 +1,11 @@
+##Add environment variables to .env file
+# --- IGNORE ---
+## Environment Variables
+.env
+.env.local
+.env.*.local
+
+## Model Output
+output/
+*.safetensors
+*.pt

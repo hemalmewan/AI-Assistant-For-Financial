@@ -1,0 +1,78 @@
+## Default configuration values
+
+### LLM provider
+#llm_provider: "openrouter"
+
+## LLM provider configuration
+llm_provider: "openai"
+model_name: "gpt-4o-mini"
+temperature: 0.3 ##deteminstic
+max_tokens: 200 ##max response length
+do_sample: True
+
+## Embedding Settings
+text_emb_provider: "sbert"
+text_emb_mdoel: "sentence-transformers/all-MiniLM-L6-v2"
+normalize_embeddings: True
+
+
+##Paths
+raw_data_path: "./data/raw/"
+artifacts: "./data/artifacts/"
+final: "./data/final/"
+
+##Chunking Strategies
+chunk_size : 1500
+overlap_size : 150
+
+##Dataset Split ratio 80/20
+train_ratio: 0.8
+validation_ratio: 0.2
+
+## LLM fine tuning process
+
+##Base model
+base_model: "meta-llama/Meta-Llama-3-8B-Instruct"
+
+##LORA
+"lora_r": 16
+"lora_alpha": 32
+"lora_dropout": 0.05
+"lora_target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+## Quantization
+"load_in_4bit": True
+"bnb_4bit_compute_dtype": bfloat16
+"bnb_4bit_quant_type": "nf4"
+"bnb_4bit_use_double_quant": True
+
+## HF Credentials
+"hf_username": "Hemalmewan"
+"hub_model_name": "uber_finetune_model"
+
+##Max tokens for colab free tier
+"max_token_length": 512
+
+##Training Args
+max_steps: 150
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+num_train_epoch: 1
+learning_rate: 2e-4
+save_steps: 50
+logging_step: 10
+
+
+##Output directory
+output_dir: "output/adapters"
+push_to_hub: False
+
+# Retrieval Settings
+similarity_top_k: 3
+rerank_top_n: 3
+
+# Advanced Retrieval Settings
+bm25_weight: 0.5  # Weight for sparse retrieval in hybrid search
+dense_weight: 0.5  # Weight for dense retrieval in hybrid search
+
+
